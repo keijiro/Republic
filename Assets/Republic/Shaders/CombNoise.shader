@@ -3,6 +3,7 @@ Shader "Hidden/Republic/WallFx/CombNoise"
     Properties
     {
         _MainTex("", 2D) = "" {}
+        _Color("", Color) = (1, 1, 1)
     }
 
     CGINCLUDE
@@ -12,9 +13,9 @@ Shader "Hidden/Republic/WallFx/CombNoise"
 
     sampler2D _MainTex;
 
-    half3 _Color;
+    half4 _Color;
     float _Density;
-    float _Speed;
+    float _Offset;
     float _Thickness;
     float _RowRepeat;
 
@@ -23,21 +24,17 @@ Shader "Hidden/Republic/WallFx/CombNoise"
         float2 uv = i.uv - 0.5;
 
         float row = floor(uv.y * _RowRepeat + 0.5);
-
         float x = uv.x * _Density + row * 100;
-        float t = _Time.y * _Speed;
 
         float n;
-        n  = snoise(float2(x * 1, t)).z;
-        n += snoise(float2(x * 2, t)).z * 0.5;
+        n  = snoise(float2(x * 1, _Offset)).z;
+        n += snoise(float2(x * 2, _Offset)).z * 0.5;
 
         float thresh = _Thickness * 1.4;
         n = (-thresh < n) * (n < thresh);
 
         half4 csrc = tex2D(_MainTex, i.uv);
-        half3 cout = _Color * n;
-
-        return half4(csrc.rgb + cout, csrc.a);
+        return lerp(csrc, _Color, n * _Color.a);
     }
 
     ENDCG
