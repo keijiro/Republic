@@ -4746,6 +4746,7 @@ GameObject:
   - component: {fileID: 1639297580}
   - component: {fileID: 1639297579}
   - component: {fileID: 1639297581}
+  - component: {fileID: 1639297582}
   m_Layer: 0
   m_Name: Wall Render
   m_TagString: Untagged
@@ -4808,7 +4809,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639297578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e3a65f0896f0a84ea03c892ccbe10b4, type: 3}
   m_Name: 
@@ -4820,6 +4821,22 @@ MonoBehaviour:
   _thickness: 0.05
   _effectShader: {fileID: 4800000, guid: 0042ecaa8a3e6e74f9987d6b327cff62, type: 3}
   _blendShader: {fileID: 4800000, guid: a9fcdc384ba65624e90cd156ba7a0437, type: 3}
+--- !u!114 &1639297582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639297578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa57aa639a21eed46a9320d6df96058b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 0, b: 0, a: 1}
+  _density: 7.1
+  _thickness: 0.054
+  _speed: 6.27
+  _shader: {fileID: 4800000, guid: 6875c0c045be3d84ba47f49b10610784, type: 3}
 --- !u!1 &1728053492
 GameObject:
   m_ObjectHideFlags: 0
