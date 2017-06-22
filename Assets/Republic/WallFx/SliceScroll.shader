@@ -1,20 +1,19 @@
-Shader "Hidden/Republic/WallFx/SliceShutter"
+Shader "Hidden/Republic/WallFx/SliceScroll"
 {
     CGINCLUDE
 
     #include "Common.hlsl"
 
-    float _Columns;
-    float _Progress;
+    float _Density;
     int _RandomSeed;
+    float _Progress;
+    float _Threshold;
 
     half4 frag(v2f_img i) : SV_TARGET
     {
-        float2 uv = (i.uv - 0.5) * float2(_Columns, _ScreenParams.y);
-        int id = (int)uv.x + (int)uv.y * (int)_Columns;
-
-        float thresh = (Random(_RandomSeed + id) + 1) * (1 - _Progress);
-        return abs(frac(uv.x) - 0.5) * 2 > thresh;
+        float2 uv = i.uv * float2(_Density, _ScreenParams.y);
+        float speed = 0.5 + 2 * Random(_RandomSeed + (int)uv.y);
+        return frac(uv.x + speed * _Density * _Progress) < _Threshold;
     }
 
     ENDCG
