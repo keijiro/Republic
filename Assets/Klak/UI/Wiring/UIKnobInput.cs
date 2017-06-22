@@ -1,5 +1,5 @@
 //
-// Klak - Utilities for creative coding with Unity
+// KlakUI - Custom UI controls for Klak
 //
 // Copyright (C) 2016 Keijiro Takahashi
 //
@@ -26,69 +26,53 @@ using Klak.Math;
 
 namespace Klak.Wiring
 {
-    [AddComponentMenu("Klak/Wiring/Filter/Float Filter")]
-    public class FloatFilter : NodeBase
+    [AddComponentMenu("Klak/Wiring/Input/UI/Knob")]
+    public class UIKnobInput : NodeBase
     {
         #region Editable properties
 
         [SerializeField]
-        AnimationCurve _responseCurve = AnimationCurve.Linear(0, 0, 1, 1);
+        FloatInterpolator.Config _interpolator = FloatInterpolator.Config.Quick;
 
-        [SerializeField]
-        FloatInterpolator.Config _interpolator = FloatInterpolator.Config.Direct;
+        #endregion
 
-        [SerializeField]
-        float _amplitude = 1.0f;
+        #region Public methods
 
-        [SerializeField]
-        float _bias = 0.0f;
+        FloatInterpolator _outputValue;
+        bool _initialized;
+
+        public void ChangeValue(float value)
+        {
+            if (_interpolator.enabled)
+            {
+                if (!_initialized)
+                {
+                    _outputValue = new FloatInterpolator(value, _interpolator);
+                    _initialized = true;
+                }
+                _outputValue.targetValue = value;
+            }
+            else
+            {
+                _valueEvent.Invoke(value);
+            }
+        }
 
         #endregion
 
         #region Node I/O
 
-        [Inlet]
-        public float input {
-            set {
-                if (!enabled) return;
-
-                _inputValue = value;
-
-                if (_interpolator.enabled)
-                    _floatValue.targetValue = EvalResponse();
-                else
-                    _outputEvent.Invoke(EvalResponse());
-            }
-        }
-
         [SerializeField, Outlet]
-        FloatEvent _outputEvent = new FloatEvent();
-
-        #endregion
-
-        #region Private members
-
-        float _inputValue;
-        FloatInterpolator _floatValue;
-
-        float EvalResponse()
-        {
-            return _responseCurve.Evaluate(_inputValue) * _amplitude + _bias;
-        }
+        FloatEvent _valueEvent = new FloatEvent();
 
         #endregion
 
         #region MonoBehaviour functions
 
-        void Start()
-        {
-            _floatValue = new FloatInterpolator(EvalResponse(), _interpolator);
-        }
-
         void Update()
         {
-            if (_interpolator.enabled)
-                _outputEvent.Invoke(_floatValue.Step());
+            if (_interpolator.enabled && _initialized)
+                _valueEvent.Invoke(_outputValue.Step());
         }
 
         #endregion
