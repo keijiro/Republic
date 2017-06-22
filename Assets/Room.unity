@@ -4810,15 +4810,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1639297578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16756f5d8399cbf46b644838f3f17949, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e3a65f0896f0a84ea03c892ccbe10b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _columns: 64
-  _rows: 64
-  _transition: 0.5
-  _randomSeed: 0
-  _effectShader: {fileID: 4800000, guid: 0ae6d7480ff839d4aaa76db76bf9018e, type: 3}
+  _density: 8
+  _rows: 1
+  _speed: 1
+  _thickness: 0.05
+  _effectShader: {fileID: 4800000, guid: 0042ecaa8a3e6e74f9987d6b327cff62, type: 3}
   _blendShader: {fileID: 4800000, guid: a9fcdc384ba65624e90cd156ba7a0437, type: 3}
 --- !u!1 &1728053492
 GameObject:

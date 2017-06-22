@@ -1,29 +1,19 @@
-Shader "Hidden/Republic/WallFx/CombNoise"
+Shader "Hidden/Republic/WallFx/SlidingLine"
 {
-    Properties
-    {
-        _MainTex("", 2D) = "" {}
-        _Color("", Color) = (1, 1, 1)
-    }
-
     CGINCLUDE
 
     #include "UnityCG.cginc"
     #include "SimplexNoise2D.hlsl"
 
-    sampler2D _MainTex;
-
-    half4 _Color;
     float _Density;
     float _Offset;
     float _Thickness;
-    float _RowRepeat;
 
     half4 frag(v2f_img i) : SV_TARGET
     {
         float2 uv = i.uv - 0.5;
 
-        float row = floor(uv.y * _RowRepeat + 0.5);
+        float row = floor(uv.y * _ScreenParams.y + 0.5);
         float x = uv.x * _Density + row * 100;
 
         float n;
@@ -31,10 +21,7 @@ Shader "Hidden/Republic/WallFx/CombNoise"
         n += snoise(float2(x * 2, _Offset)).z * 0.5;
 
         float thresh = _Thickness * 1.4;
-        n = (-thresh < n) * (n < thresh);
-
-        half4 csrc = tex2D(_MainTex, i.uv);
-        return lerp(csrc, _Color, n * _Color.a);
+        return (-thresh < n) * (n < thresh);
     }
 
     ENDCG
