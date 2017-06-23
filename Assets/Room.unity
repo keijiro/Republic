@@ -4747,6 +4747,8 @@ GameObject:
   - component: {fileID: 1639297579}
   - component: {fileID: 1639297581}
   - component: {fileID: 1639297582}
+  - component: {fileID: 1639297583}
+  - component: {fileID: 1639297584}
   m_Layer: 0
   m_Name: Wall Render
   m_TagString: Untagged
@@ -4837,6 +4839,44 @@ MonoBehaviour:
   _thickness: 0.054
   _speed: 6.27
   _shader: {fileID: 4800000, guid: 6875c0c045be3d84ba47f49b10610784, type: 3}
+--- !u!114 &1639297583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639297578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e10b9412bdae74b838f458693ef8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _density: 1
+  _rows: 64
+  _speed: 1
+  _sliceLength: 0.5
+  _effectShader: {fileID: 4800000, guid: aca62c0cbc6392b46828d841e1cf75b2, type: 3}
+  _blendShader: {fileID: 4800000, guid: a9fcdc384ba65624e90cd156ba7a0437, type: 3}
+--- !u!114 &1639297584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639297578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0511bca1d4a0d4e84db843af10d422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color1: {r: 0.7794118, g: 0.7794118, b: 0.7794118, a: 1}
+  _color2: {r: 0.8602941, g: 0, b: 0, a: 1}
+  _frequency: 5
+  _rows: 12
+  _waveAmplitude: 0.3
+  _waveScroll: 1
+  _waveAnimation: 1
+  _rotation: 0
+  _shader: {fileID: 4800000, guid: 4e981dd5145a44e4eba419ab0228a689, type: 3}
 --- !u!1 &1728053492
 GameObject:
   m_ObjectHideFlags: 0
