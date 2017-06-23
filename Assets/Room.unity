@@ -661,20 +661,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 0, z: 0}
   _emitterSize: {x: 5, y: 3, z: 5}
-  _throttle: 1
+  _throttle: 0
   _life: 4
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}
   _directionSpread: 0.2
   _speedRandomness: 0.5
   _acceleration: {x: 0, y: 0, z: 0}
-  _drag: 0.1
+  _drag: 1
   _spin: 20
-  _speedToSpin: 300
+  _speedToSpin: 3000
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.3
-  _noiseFrequency: 0.2
-  _noiseMotion: 1
+  _noiseAmplitude: 0.2
+  _noiseFrequency: 0.4
+  _noiseMotion: 0.3
   _template: {fileID: 11400000, guid: 5ad4b68f541cd9f4f9389e70aa3d1289, type: 2}
   _scale: 0.1
   _scaleRandomness: 0.8
@@ -13868,20 +13868,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitterCenter: {x: 0, y: 0, z: 0}
   _emitterSize: {x: 5, y: 3, z: 5}
-  _throttle: 1
+  _throttle: 0
   _life: 4
   _lifeRandomness: 0.6
   _initialVelocity: {x: 0, y: 0, z: 0}
   _directionSpread: 0.2
   _speedRandomness: 0.5
   _acceleration: {x: 0, y: 0, z: 0}
-  _drag: 0.1
+  _drag: 1
   _spin: 20
-  _speedToSpin: 300
+  _speedToSpin: 3000
   _spinRandomness: 0.3
-  _noiseAmplitude: 0.3
-  _noiseFrequency: 0.2
-  _noiseMotion: 1
+  _noiseAmplitude: 0.4
+  _noiseFrequency: 0.4
+  _noiseMotion: 0.3
   _template: {fileID: 11400000, guid: 5ad4b68f541cd9f4f9389e70aa3d1289, type: 2}
   _scale: 0.2
   _scaleRandomness: 0.8
@@ -17135,17 +17135,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 234566127}
-        m_MethodName: Bang
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _offEvent:
@@ -17209,17 +17198,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1112333810}
         m_MethodName: set_floatInput
         m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 234566127}
-        m_MethodName: Bang
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
@@ -19094,8 +19072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _columns: 128
-  _rows: 72
+  _columns: 175
+  _rows: 112
   _transition: 0.5
   _effectShader: {fileID: 4800000, guid: 0ae6d7480ff839d4aaa76db76bf9018e, type: 3}
   _blendShader: {fileID: 4800000, guid: a9fcdc384ba65624e90cd156ba7a0437, type: 3}
@@ -21994,7 +21972,7 @@ MonoBehaviour:
   _bangEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2031030905}
+      - m_Target: {fileID: 1159937434}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -22005,7 +21983,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1159937434}
+      - m_Target: {fileID: 497326464}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
