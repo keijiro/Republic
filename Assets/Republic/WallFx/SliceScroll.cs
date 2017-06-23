@@ -7,7 +7,7 @@ namespace Republic.WallFx
         [SerializeField] Color _color = Color.white;
         [SerializeField, Range(1, 16)] float _density = 1;
         [SerializeField, Range(1, 512)] float _rows = 64;
-        [SerializeField, Range(16, 16)] float _speed = 1;
+        [SerializeField, Range(0, 16)] float _speed = 1;
         [SerializeField, Range(0, 1)] float _sliceLength = 0.5f;
 
         public Color color { set { _color = value; } }
