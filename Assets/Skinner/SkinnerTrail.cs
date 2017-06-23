@@ -219,7 +219,7 @@ namespace Skinner
 
         void OnDestroy()
         {
-            _kernel.Release();
+            if (_kernel != null) _kernel.Release();
         }
 
         void OnValidate()
