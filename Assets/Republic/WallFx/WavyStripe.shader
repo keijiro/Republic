@@ -3,8 +3,7 @@ Shader "Hidden/Republic/WallFx/WavyStripe"
     Properties
     {
         _MainTex("", 2D) = "" {}
-        _Color1("", Color) = (1, 1, 1, 1)
-        _Color2("", Color) = (1, 1, 1, 1)
+        _Color("", Color) = (1, 1, 1, 1)
     }
 
     CGINCLUDE
@@ -13,9 +12,7 @@ Shader "Hidden/Republic/WallFx/WavyStripe"
 
     sampler2D _MainTex;
 
-    half4 _Color1;
-    half4 _Color2;
-
+    half4 _Color;
     float _Frequency;
     float _Rows;
 
@@ -31,10 +28,10 @@ Shader "Hidden/Republic/WallFx/WavyStripe"
         uv.x = uv.x * _Frequency + _WaveScroll;
         uv.y = (uv.y + sin(uv.x) * _WaveAmplitude) * _Rows;
 
-        half4 c = frac(uv.y) < 0.5 ? _Color1 : _Color2;
+        half alpha = frac(uv.y) < 0.5;
 
         half4 src = tex2D(_MainTex, i.uv);
-        return lerp(src, c, c.a);
+        return lerp(src, _Color, alpha * _Color.a);
     }
 
     ENDCG

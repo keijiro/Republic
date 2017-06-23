@@ -4,9 +4,7 @@ namespace Republic.WallFx
 {
     class WavyStripe : MonoBehaviour
     {
-        [SerializeField] Color _color1 = Color.blue;
-        [SerializeField] Color _color2 = Color.red;
-        [Space]
+        [SerializeField] Color _color = Color.white;
         [SerializeField, Range(1, 64)] float _frequency = 8;
         [SerializeField, Range(1, 64)] float _rows = 10;
         [Space]
@@ -16,9 +14,7 @@ namespace Republic.WallFx
         [Space]
         [SerializeField, Range(-5, 5)] float _rotation = 0.1f;
 
-        public Color color1 { set { _color1 = value; } }
-        public Color color2 { set { _color2 = value; } }
-
+        public Color color { set { _color = value; } }
         public float frequency { set { _frequency = value; } }
         public float rows { set { _rows = value; } }
 
@@ -64,8 +60,7 @@ namespace Republic.WallFx
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
             var wamp = _waveAmplitude * Mathf.Sin(_waveAnimationTime);
-            _material.SetColor("_Color1", _color1);
-            _material.SetColor("_Color2", _color2);
+            _material.SetColor("_Color", _color);
             _material.SetFloat("_Frequency", _frequency);
             _material.SetFloat("_Rows", _rows);
             _material.SetFloat("_WaveScroll", _waveScrollTime);
