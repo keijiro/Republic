@@ -4749,6 +4749,7 @@ GameObject:
   - component: {fileID: 1639297582}
   - component: {fileID: 1639297583}
   - component: {fileID: 1639297584}
+  - component: {fileID: 1639297585}
   m_Layer: 0
   m_Name: Wall Render
   m_TagString: Untagged
@@ -4845,7 +4846,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639297578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96e10b9412bdae74b838f458693ef8d7, type: 3}
   m_Name: 
@@ -4863,7 +4864,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639297578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb0511bca1d4a0d4e84db843af10d422, type: 3}
   m_Name: 
@@ -4877,6 +4878,22 @@ MonoBehaviour:
   _waveAnimation: 1
   _rotation: 0
   _shader: {fileID: 4800000, guid: 4e981dd5145a44e4eba419ab0228a689, type: 3}
+--- !u!114 &1639297585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639297578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42a6f9c85409c645b801f8427b5ce24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 0, b: 0, a: 1}
+  _columns: 8
+  _rows: 4.5
+  _repeat: 4
+  _shader: {fileID: 4800000, guid: a61e89e5185ddc84c9354d631e3bc073, type: 3}
 --- !u!1 &1728053492
 GameObject:
   m_ObjectHideFlags: 0

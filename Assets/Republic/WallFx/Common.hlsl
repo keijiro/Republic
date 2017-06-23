@@ -1,7 +1,7 @@
 #include "UnityCG.cginc"
 
 // Hash function from H. Schechter & R. Bridson, goo.gl/RXiKaH
-float Hash(uint s)
+uint Hash(uint s)
 {
     s ^= 2747636419u;
     s *= 2654435769u;
