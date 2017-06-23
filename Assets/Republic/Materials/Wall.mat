@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Wall
   m_Shader: {fileID: 4800000, guid: 7fc0752de1bdf604ebaceff8747f2345, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ENABLEPROJECTION_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -40,8 +40,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 8400000, guid: fd988bff946f5034fa8603bf417e676e, type: 2}
-        m_Scale: {x: 0.1875, y: 0.33333}
-        m_Offset: {x: 0.5, y: 0.5}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -60,6 +60,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emission: 1
+    - _EnableProjection: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -67,6 +68,10 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Projection: 1
+    - _ProjectionScale: 0.3333
+    - _ProjectionScaleX: 0.1875
+    - _ProjectionScaleY: 0.3333
     - _Smoothness: 0.918
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
