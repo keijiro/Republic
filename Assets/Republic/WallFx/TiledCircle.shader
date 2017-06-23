@@ -15,6 +15,7 @@ Shader "Hidden/Republic/WallFx/TiledCircle"
     half4 _Color;
     float2 _Density;
     float _Repeat;
+    float _Thickness;
     float _Displace;
 
     float _AAFactor;
@@ -34,7 +35,7 @@ Shader "Hidden/Republic/WallFx/TiledCircle"
         float d = length(uv - center);
 
         half alpha = abs(0.5 - frac(d * _Repeat)) * 2;
-        alpha = saturate((alpha - 0.5) * _AAFactor);
+        alpha = saturate((_Thickness - alpha) * _AAFactor);
 
         half4 src = tex2D(_MainTex, i.uv);
         return lerp(src, _Color, alpha * _Color.a);
