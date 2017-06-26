@@ -8,10 +8,10 @@ at [WOMB Shibuya], 24th Jun 2017.
 ![screenshot](http://i.imgur.com/wjE6lmMm.png)
 
 ![gif](http://i.imgur.com/VUP0lc2.gif)
-Video by [@tokyomax](https://twitter.com/tokyomax/status/878736675228090368)
+Video by [@yonyonsan_j](https://twitter.com/yonyonsan_j/status/878645851026989056)
 
 ![gif](http://i.imgur.com/jhqBTfg.gif)
-Video by [@yonyonsan_j](https://twitter.com/yonyonsan_j/status/878645851026989056)
+Video by [@tokyomax](https://twitter.com/tokyomax/status/878736675228090368)
 
 
 [FEMM]: http://femms.jp/femme/top.php
