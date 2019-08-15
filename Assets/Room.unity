@@ -18497,7 +18497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 780, y: 144}
   _target: {fileID: 985864392}
-  _propertyName: fov
+  _propertyName: fieldOfView
 --- !u!4 &1192400175
 Transform:
   m_ObjectHideFlags: 0
